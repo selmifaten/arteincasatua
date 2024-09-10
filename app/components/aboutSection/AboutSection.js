@@ -9,7 +9,7 @@ const AboutSection = () => {
           <div className="row position-relative">
             <div
               className="col-lg-7 about-img"
-              style={{ backgroundImage: "url(/img/about.jpg)" }}
+              style={{ backgroundImage: "url(/img/424976710_924111939716336_8625544806207383844_n.jpg)" }}
             ></div>
 
             <div className="col-lg-7">

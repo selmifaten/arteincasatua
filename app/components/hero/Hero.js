@@ -37,31 +37,31 @@ const Hero = () => {
         <div
           className="carousel-item active"
           style={{
-            backgroundImage: "url(/img/hero-carousel/hero-carousel-1.jpg)",
+            backgroundImage: "url(/img/hero-carousel/1725926415481.jpg)",
           }}
         ></div>
         <div
           className="carousel-item"
           style={{
-            backgroundImage: "url(/img/hero-carousel/hero-carousel-2.jpg)",
+            backgroundImage: "url(/img/hero-carousel/1725926415458.jpg)",
           }}
         ></div>
         <div
           className="carousel-item"
           style={{
-            backgroundImage: "url(/img/hero-carousel/hero-carousel-3.jpg)",
+            backgroundImage: "url(/img/hero-carousel/1725926415671.jpg)",
           }}
         ></div>
         <div
           className="carousel-item"
           style={{
-            backgroundImage: "url(/img/hero-carousel/hero-carousel-4.jpg)",
+            backgroundImage: "url(/img/hero-carousel/449193632_1029291069198422_2086070978350386450_n.jpg)",
           }}
         ></div>
         <div
           className="carousel-item"
           style={{
-            backgroundImage: "url(/img/hero-carousel/hero-carousel-5.jpg)",
+            backgroundImage: "url(/img/hero-carousel/1725926415147.jpg)",
           }}
         ></div>
 

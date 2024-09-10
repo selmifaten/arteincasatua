@@ -4,7 +4,7 @@ const Breadcrumbs = ({parent}) => {
       <div
         className="breadcrumbs d-flex align-items-center"
         style={{
-          backgroundImage: "url('/img/breadcrumbs-bg.jpg')",
+          backgroundImage: "url('/img/1725926415776.jpg')",
         }}
       >
         <div

@@ -22,7 +22,6 @@ const Footer = () => {
                   <br />
                 </p>
                 <div className="social-links d-flex mt-3">
-                  
                   <a
                     href="https://www.facebook.com/luliarmen"
                     className="d-flex align-items-center justify-content-center"
@@ -35,33 +34,11 @@ const Footer = () => {
                   >
                     <i className="bi bi-instagram"></i>
                   </a>
-                  
                 </div>
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-3 footer-links">
-              <h4>Link utili</h4>
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Chi Siamo</a>
-                </li>
-                <li>
-                  <a href="#">Servizi</a>
-                </li>
-                <li>
-                  <a href="#">Progetti</a>
-                </li>
-                <li>
-                  <a href="#">Contatti</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="col-lg-2 col-md-3 footer-links">
+            <div className="col-lg-4 col-md-3 footer-links">
               <h4>Our Services</h4>
               <ul>
                 <li>
@@ -82,7 +59,27 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-lg-2 col-md-3 footer-links">
+            <div className="col-lg-4 col-md-3 footer-links">
+              <h4>Link utili</h4>
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Chi Siamo</a>
+                </li>
+                <li>
+                  <a href="#">Servizi</a>
+                </li>
+                <li>
+                  <a href="#">Progetti</a>
+                </li>
+                <li>
+                  <a href="#">Contatti</a>
+                </li>
+              </ul>
+            </div>
+            {/* <div className="col-lg-2 col-md-3 footer-links">
               <h4>Hic solutasetp</h4>
               <ul>
                 <li>
@@ -101,7 +98,7 @@ const Footer = () => {
                   <a href="#">Sit quas consectetur</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             {/* <div className="col-lg-2 col-md-3 footer-links">
               <h4>Nobis illum</h4>
