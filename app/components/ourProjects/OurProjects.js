@@ -127,7 +127,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/remodeling_renovations/1725926415277.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -150,7 +149,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/construction_paintinganddecorations/1725926414709.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -173,7 +171,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/repairs_plasterboardwork/1725926414822.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -196,7 +193,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/repairs_plasterboardwork/1725926414580.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -219,7 +215,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/remodeling_renovations/449193632_1029291069198422_2086070978350386450_n.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -242,7 +237,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/construction_paintinganddecorations/1725926414731.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -265,7 +259,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/repairs_plasterboardwork/1725926414898.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -288,7 +281,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/construction_paintinganddecorations/1725926414631.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -311,7 +303,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/remodeling_renovations/1725926414938.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -334,7 +325,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/construction_paintinganddecorations/1725926414606.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -357,7 +347,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/repairs_plasterboardwork/1725926414980.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -380,7 +369,6 @@ const OurProjects = ({ parent }) => {
             <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
               <div className="portfolio-content h-100">
                 <img
-                loading={"lazy"}
                   src="/img/projects/remodeling_renovations/1725926415481.jpg"
                   className="img-fluid lazy-load"
                   alt=""
@@ -405,7 +393,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926415321.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -428,7 +415,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926415172.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -451,7 +437,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926415343.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -474,7 +459,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926414774.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -497,7 +481,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926415232.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -520,7 +503,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926415725.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -543,7 +525,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926415693.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -566,7 +547,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/remodeling_renovations/1725926415671.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -589,7 +569,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/construction_paintinganddecorations/1725926414661.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -612,7 +591,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/construction_paintinganddecorations/1725926414685.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -635,7 +613,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/construction_paintinganddecorations/1725926415505.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -658,7 +635,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-construction">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/construction_paintinganddecorations/1725926415626.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -681,7 +657,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926414551.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -704,7 +679,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926414862.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -727,7 +701,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926414980.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -750,7 +723,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926415011.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -773,7 +745,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926415034.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -796,7 +767,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926415082.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -819,7 +789,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926415105.jpg"
                       className="img-fluid lazy-load"
                       alt=""
@@ -842,7 +811,6 @@ const OurProjects = ({ parent }) => {
                 <div className="col-lg-4 col-md-6 portfolio-item filter-repairs">
                   <div className="portfolio-content h-100">
                     <img
-                    loading={"lazy"}
                       src="/img/projects/repairs_plasterboardwork/1725926415125.jpg"
                       className="img-fluid lazy-load"
                       alt=""
