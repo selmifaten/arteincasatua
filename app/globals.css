@@ -2684,3 +2684,38 @@ section {
 .footer .footer-legal .credits a {
   color: var(--color-primary);
 }
+
+.see-more {
+  color: var(--color-default, #364d59);
+  background-color: var(--color-primary, #feb900);
+  font-family: var(
+    --font-default,
+    "Open Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    "Liberation Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
+  );
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+}
+
+.see-more:hover {
+  background-color: var(--color-secondary, #52565e);
+  color: var(--color-primary, #feb900);
+  text-decoration: underline;
+}

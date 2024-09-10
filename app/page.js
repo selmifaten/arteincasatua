@@ -30,8 +30,6 @@ export default function Home() {
       script.async = true;
       document.body.appendChild(script);
 
-      
-
       // Cleanup script when component unmounts
       return () => {
         document.body.removeChild(script);
@@ -46,7 +44,7 @@ export default function Home() {
         <GetStarted />
         <Services />
         <Features />
-        <OurProjects />
+        <OurProjects parent={"Home"} />
         <Testimonials />
         <AltServices />
       </main>

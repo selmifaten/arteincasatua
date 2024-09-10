@@ -42,7 +42,7 @@ export default function ChiSiamo() {
       <Header parent={"Progetti"} />
       <main className="main">
         <Breadcrumbs parent={"Progetti"} />
-        <OurProjects />
+        <OurProjects parent={"Progetti"} />
         <Testimonials />
       </main>
       <Footer />
