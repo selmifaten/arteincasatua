@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <meta content="" name="keywords" />
 
         <link href="/img/424668747_918110523649811_4874409078525808894_n.jpg" rel="icon" />
-        <link href="/img/apple-424668747_918110523649811_4874409078525808894_n.jpg" rel="apple-touch-icon" />
+        <link href="/img/424668747_918110523649811_4874409078525808894_n.jpg" rel="apple-touch-icon" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

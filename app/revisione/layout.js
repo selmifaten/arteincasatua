@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "L'Arte in Casa Tua: Revisione",
+  title: "L'Arte in Casa Tua: Contatti",
 };
 
 export default function RootLayout({ children }) {

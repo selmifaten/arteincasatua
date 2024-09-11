@@ -1,21 +1,208 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { useEffect, useState, useRef } from "react";
 
 const Testimonials = () => {
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(5);
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [totalPages, setTotalPages] = useState(0);
+  const loadingRef = useRef(null);
+
+  const icon = {
+    success: '<i class="bi bi-check-circle"></i>',
+    danger: '<i class="bi bi-bug"></i>',
+    warning: '<i class="bi bi-exclamation-circle">warning</i>',
+    info: '<i class="bi bi-info-circle">info</i>',
+  };
+
+  const showUpgradedToast = (
+    message = "Sample Message",
+    toastType = "info"
+  ) => {
+    if (!Object.keys(icon).includes(toastType)) toastType = "info";
+
+    let box = document.createElement("div");
+    box.classList.add("better-toast", `better-toast-${toastType}`);
+    box.innerHTML = ` <div class="better-toast-content-wrapper">
+                    <div class="better-toast-icon">
+                    ${icon[toastType]}
+                    </div>
+                    <div class="better-toast-message">${message}</div>
+                    <div class="better-toast-progress"></div>
+                    </div>`;
+
+    let toastAlready = document.body.querySelector(".better-toast");
+    if (toastAlready) {
+      toastAlready.remove();
+    }
+
+    document.body.appendChild(box);
+    setTimeout(() => {
+      box.remove();
+    }, 5000);
+  };
+
+  const fetchReviews = async () => {
+    try {
+      loadingRef.current.classList.add("d-block");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/reviews/pagination?page=${page}&limit=${limit}`
+      );
+      const data = await response.json();
+      setTotalPages(data.totalPages);
+      setReviews(data.data);
+      loadingRef.current.classList.remove("d-block");
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+      loadingRef.current.classList.remove("d-block");
+      showUpgradedToast(
+        "Errore durante il recupero delle recensioni",
+        "danger"
+      );
+    }
+  };
+
+  const renderPageNumbers = () => {
+    const pageNumbers = [];
+
+    if (totalPages <= 4) {
+      // Show all pages if total pages are 4 or less
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(
+          <li
+            key={i}
+            className={`page__numbers ${page === i ? "active" : ""}`}
+            onClick={() => setPage(i)}
+          >
+            {i}
+          </li>
+        );
+      }
+    } else {
+      // Show pagination with dots for more than 4 pages
+      if (page <= 3) {
+        // If the current page is 1, 2, or 3, show 1, 2, 3, ..., last page
+        for (let i = 1; i <= 3; i++) {
+          pageNumbers.push(
+            <li
+              key={i}
+              className={`page__numbers ${page === i ? "active" : ""}`}
+              onClick={() => setPage(i)}
+            >
+              {i}
+            </li>
+          );
+        }
+        pageNumbers.push(
+          <li key="dots" className="page__dots">
+            ...
+          </li>,
+          <li
+            key={totalPages}
+            className="page__numbers"
+            onClick={() => setPage(totalPages)}
+          >
+            {totalPages}
+          </li>
+        );
+      } else if (page >= totalPages - 2) {
+        // If the current page is within the last 3 pages, show first page, ..., last 3 pages
+        pageNumbers.push(
+          <li key={1} className="page__numbers" onClick={() => setPage(1)}>
+            1
+          </li>,
+          <li key="dots" className="page__dots">
+            ...
+          </li>
+        );
+        for (let i = totalPages - 2; i <= totalPages; i++) {
+          pageNumbers.push(
+            <li
+              key={i}
+              className={`page__numbers ${page === i ? "active" : ""}`}
+              onClick={() => setPage(i)}
+            >
+              {i}
+            </li>
+          );
+        }
+      } else {
+        // Show first page, ..., current page, next page, ..., last page
+        pageNumbers.push(
+          <li key={1} className="page__numbers" onClick={() => setPage(1)}>
+            1
+          </li>,
+          <li key="dots1" className="page__dots">
+            ...
+          </li>
+        );
+        for (let i = page - 1; i <= page + 1; i++) {
+          pageNumbers.push(
+            <li
+              key={i}
+              className={`page__numbers ${page === i ? "active" : ""}`}
+              onClick={() => setPage(i)}
+            >
+              {i}
+            </li>
+          );
+        }
+        pageNumbers.push(
+          <li key="dots2" className="page__dots">
+            ...
+          </li>,
+          <li
+            key={totalPages}
+            className="page__numbers"
+            onClick={() => setPage(totalPages)}
+          >
+            {totalPages}
+          </li>
+        );
+      }
+    }
+
+    return pageNumbers;
+  };
+
+  const handlePrevClick = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  const handleNextClick = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, [page]);
   return (
     <section id="testimonials" className="testimonials section-bg">
       <div className="container" data-aos="fade-up">
         <div className="section-header">
-          <h2>Testimonials</h2>
+          <h2>Testimonianze</h2>
           <p>
-            Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum
-            nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti
+            Leggi cosa dicono i nostri clienti sulla loro esperienza con noi{" "}
+          </p>
+          <p>
+            Se hai provato i nostri prodotti o servizi, ci farebbe piacere avere
+            anche la tua opinione!
+            <br />
+            <a className="review-btn" href="./revisione" onClick={() => {}}>
+              Lascia la tua recensione
+            </a>
           </p>
         </div>
 
         <Swiper
           speed={600}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Pagination, Scrollbar, A11y]}
           loop={true}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           slidesPerView={"auto"}
@@ -23,7 +210,7 @@ const Testimonials = () => {
             type: "bullets",
             clickable: true,
           }}
-          navigation
+          // navigation
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 20 },
             1200: {
@@ -34,151 +221,47 @@ const Testimonials = () => {
           className="swiper-2 swiper"
         >
           <div className="swiper-wrapper">
-            <SwiperSlide className="swiper-slide">
-              <div className="testimonial-wrap">
-                <div className="testimonial-item">
-                  <img
-                    src="/img/testimonials/testimonials-1.jpg"
-                    className="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <div className="stars">
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
+            {reviews.map((review) => (
+              <SwiperSlide className="swiper-slide" key={review.id}>
+                <div className="testimonial-wrap">
+                  <div className="testimonial-item">
+                    <h3>{review.name}</h3>
+                    <h4>{review.job}</h4>
+                    <div className="stars">
+                      {[...Array(review.rate)].map((_, index) => (
+                        <i key={index} className="bi bi-star-fill"></i>
+                      ))}
+                    </div>
+                    <p>
+                      <i className="bi bi-quote quote-icon-left"></i>
+                      {review.message}
+                      <i className="bi bi-quote quote-icon-right"></i>
+                    </p>
                   </div>
-                  <p>
-                    <i className="bi bi-quote quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec
-                    porttitora entum suscipit rhoncus. Accusantium quam,
-                    ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                    risus at semper.
-                    <i className="bi bi-quote quote-icon-right"></i>
-                  </p>
                 </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-              <div className="testimonial-wrap">
-                <div className="testimonial-item">
-                  <img
-                    src="/img/testimonials/testimonials-2.jpg"
-                    className="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <div className="stars">
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i className="bi bi-quote quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse
-                    labore quem cillum quid cillum eram malis quorum velit fore
-                    eram velit sunt aliqua noster fugiat irure amet legam anim
-                    culpa.
-                    <i className="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-              <div className="testimonial-wrap">
-                <div className="testimonial-item">
-                  <img
-                    src="/img/testimonials/testimonials-3.jpg"
-                    className="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <div className="stars">
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i className="bi bi-quote quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim
-                    sint quorum nulla quem veniam duis minim tempor labore quem
-                    eram duis noster aute amet eram fore quis sint minim.
-                    <i className="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-              <div className="testimonial-wrap">
-                <div className="testimonial-item">
-                  <img
-                    src="/img/testimonials/testimonials-4.jpg"
-                    className="testimonial-img"
-                    alt=""
-                  />
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <div className="stars">
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i className="bi bi-quote quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                    multos export minim fugiat minim velit minim dolor enim duis
-                    veniam ipsum anim magna sunt elit fore quem dolore labore
-                    illum veniam.
-                    <i className="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-              <div className="testimonial-wrap">
-                <div className="testimonial-item">
-                  <img
-                    src="/img/testimonials/testimonials-5.jpg"
-                    className="testimonial-img"
-                    alt=""
-                  />
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <div className="stars">
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                    <i className="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i className="bi bi-quote quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure
-                    aliqua veniam tempor noster veniam enim culpa labore duis
-                    sunt culpa nulla illum cillum fugiat legam esse veniam culpa
-                    fore nisi cillum quid.
-                    <i className="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
           </div>
         </Swiper>
+      </div>
+
+      <ul className="page">
+        <li
+          className={`page__btn ${page !== 1 ? "active" : ""}`}
+          onClick={() => handlePrevClick()}
+        >
+          <i className="bi bi-chevron-double-left"></i>
+        </li>
+        {renderPageNumbers()}
+        <li
+          className={`page__btn ${page < totalPages ? "active" : ""}`}
+          onClick={() => handleNextClick()}
+        >
+          <i className="bi bi-chevron-double-right"></i>
+        </li>
+      </ul>
+      <div className="loading" ref={loadingRef}>
+        Caricamento
       </div>
     </section>
   );

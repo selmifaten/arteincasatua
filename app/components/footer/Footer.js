@@ -39,43 +39,40 @@ const Footer = () => {
             </div>
 
             <div className="col-lg-4 col-md-3 footer-links">
-              <h4>Our Services</h4>
+              <h4>Link utili</h4>
               <ul>
                 <li>
-                  <a href="#">Web Design</a>
+                  <a href="./">Home</a>
                 </li>
                 <li>
-                  <a href="#">Web Development</a>
+                  <a href="./chi-siamo">Chi Siamo</a>
                 </li>
                 <li>
-                  <a href="#">Product Management</a>
+                  <a href="./servizi">Servizi</a>
                 </li>
                 <li>
-                  <a href="#">Marketing</a>
+                  <a href="./progetti">Progetti</a>
                 </li>
                 <li>
-                  <a href="#">Graphic Design</a>
+                  <a href="./contatti">Contatti</a>
                 </li>
               </ul>
             </div>
 
             <div className="col-lg-4 col-md-3 footer-links">
-              <h4>Link utili</h4>
+              <h4>Our Services</h4>
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="./servizi">Ristrutturazioni</a>
                 </li>
                 <li>
-                  <a href="#">Chi Siamo</a>
+                  <a href="./servizi">Tinteggiature</a>
                 </li>
                 <li>
-                  <a href="#">Servizi</a>
+                  <a href="./servizi">Decorazioni</a>
                 </li>
                 <li>
-                  <a href="#">Progetti</a>
-                </li>
-                <li>
-                  <a href="#">Contatti</a>
+                  <a href="./servizi">Lavori in Cartongesso</a>
                 </li>
               </ul>
             </div>

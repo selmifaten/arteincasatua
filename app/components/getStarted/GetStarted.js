@@ -5,6 +5,19 @@ const GetStarted = () => {
   const errorMessageRef = useRef(null);
   const sentMessageRef = useRef(null);
 
+  const phoneRef = useRef(null);
+
+  const validateNumberInput = (ref) => {
+    const input = ref.current;
+    let value = input.value;
+
+    const regex = /^\+?[0-9]*$/;
+
+    if (!regex.test(value)) {
+      input.value = value.slice(0, -1);
+    }
+  };
+
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -98,6 +111,8 @@ const GetStarted = () => {
                     className="form-control"
                     name="phone"
                     placeholder="Telefono"
+                    ref={phoneRef}
+                    onInput={() => validateNumberInput(phoneRef)}
                     required
                   />
                 </div>
