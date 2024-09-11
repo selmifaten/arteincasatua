@@ -19,14 +19,6 @@ const Header = ({ parent }) => {
               </a>
             </li>
             <li>
-              <a
-                className={parent === "Chi Siamo" ? "active" : ""}
-                href="./chi-siamo"
-              >
-                Chi Siamo
-              </a>
-            </li>
-            <li>
               <a className={parent === "Servizi" ? "active" : ""} href="./servizi">
                 Servizi
               </a>
