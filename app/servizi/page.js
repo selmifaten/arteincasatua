@@ -1,21 +1,16 @@
 "use client";
 import AOS from "aos";
 import { useEffect } from "react";
-
+import { useRef } from "react";
 import Header from "../components/header/Header";
-import GetStarted from "../components/getStarted/GetStarted";
 import Services from "../components/services/Services";
-import Features from "../components/features/Features";
-import OurProjects from "../components/ourProjects/OurProjects";
 import Testimonials from "../components/testimonials/Testimonials";
-import AltServices from "../components/altServices/AltServices";
 import Footer from "../components/footer/Footer";
 import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
-import AboutSection from "../components/aboutSection/AboutSection";
-import StatsCounter from "../components/statsCounter/StatsCounter";
 import ServiceCards from "../components/serviceCards/ServiceCards";
 
 export default function ChiSiamo() {
+  const preloaderRef = useRef(null);
   function aos_init() {
     AOS.init({
       duration: 800,
@@ -31,6 +26,7 @@ export default function ChiSiamo() {
       script.src = "/vendor/bootstrap/js/bootstrap.bundle.min.js";
       script.async = true;
       document.body.appendChild(script);
+      preloaderRef.current.remove();
 
       return () => {
         document.body.removeChild(script);
@@ -47,6 +43,13 @@ export default function ChiSiamo() {
         <Testimonials />
       </main>
       <Footer />
+      <a
+        href="#"
+        className="scroll-top d-flex align-items-center justify-content-center"
+      >
+        <i className="bi bi-arrow-up-short"></i>
+      </a>
+      <div id="preloader" ref={preloaderRef}></div>
     </div>
   );
 }

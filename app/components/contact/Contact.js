@@ -56,8 +56,8 @@ const Contact = () => {
           <div className="col-lg-6">
             <div className="info-item  d-flex flex-column justify-content-center align-items-center">
               <i className="bi bi-map"></i>
-              <h3>Il nostro indirizzo</h3>
-              <p>17100 Savona, Liguria, Italy</p>
+              <h3>AREA SERVIZIO</h3>
+              <p>Liguria, Italy</p>
             </div>
           </div>
 

@@ -10,10 +10,9 @@ const Footer = () => {
               <div className="footer-info">
                 <h3>Arte in Casa Tua</h3>
                 <p>
-                  17100 Savona, <br />
                   Liguria, Italy
                   {/* https://maps.app.goo.gl/t9M8mfMhYmmcmv5d6 */}
-                  {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234.08265469447494!2d8.482039738858468!3d44.31155269439236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d2e1ff986e7361%3A0x24bcefc724b7e45c!2sVia%20Montegrappa%2C%206%2C%2017100%20Savona%20SV%2C%20Italy!5e1!3m2!1sen!2stn!4v1725889063007!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
+                  {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234.08265469447494!2d8.482039738858468!3d44.31155269439236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d2e1ff986e7361%3A0x24bcefc724b7e45c!2sVia%20Montegrappa%2C%206%2C%2017100%20Savona%20SV%2C%20Italy!5e1!3m2!1sen!2stn!4v1725889063007!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> */}
                   <br />
                   <br />
                   <strong>Telefono:</strong> +39 327 945 2547
@@ -43,9 +42,6 @@ const Footer = () => {
               <ul>
                 <li>
                   <a href="./">Home</a>
-                </li>
-                <li>
-                  <a href="./chi-siamo">Chi Siamo</a>
                 </li>
                 <li>
                   <a href="./servizi">Servizi</a>

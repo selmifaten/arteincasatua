@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
 
         {/* <script src="/vendor/glightbox/js/glightbox.min.js"></script> */}
         <script src="/vendor/php-email-form/validate.js"></script>
-        <script src="/js/main.js" />
+        <script src="/js/main.js" defer />
       </head>
       <body>{children}</body>
     </html>
