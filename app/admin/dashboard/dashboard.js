@@ -35,7 +35,7 @@ const Dashboard = () => {
       if (response.ok) {
         const data = await response.json();
         if (data == null) {
-          showUpgradedToast("Session Expired, please Log again", "danger");
+          showUpgradedToast("Sessione scaduta, effettua nuovamente l'accesso", "danger");
           setTimeout(() => {
             window.location.href = "/admin/login";
           }, 2000);
@@ -99,10 +99,10 @@ const Dashboard = () => {
   };
 
   const logout = () => {
-    showUpgradedToast("Logging out, Please wait...");
+    showUpgradedToast("Disconnessione, attendere...");
     localStorage.removeItem("access_token");
     setTimeout(() => {
-      showUpgradedToast("Done!, Redirecting...", "success");
+      showUpgradedToast("Fatto!, Reindirizzamento...", "success");
     }, 1000);
 
     setTimeout(() => {
@@ -130,12 +130,12 @@ const Dashboard = () => {
         const data = await response.json();
         setImages(data);
       } else {
-        showUpgradedToast("Error From DataBase!", "danger");
+        showUpgradedToast("Errore, riprova!", "danger");
       }
     } catch (error) {
       console.log(error);
       showUpgradedToast(
-        "Error in  fetching projects, please try again later",
+        "Errore, riprova!",
         "danger"
       );
     }
@@ -143,7 +143,7 @@ const Dashboard = () => {
 
   const DeletePhoto = async () => {
     try {
-      showUpgradedToast("Deleting, Please wait...");
+      showUpgradedToast("Eliminazione in corso, attendere...");
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/projects/${selectedItem.id}`,
         {
@@ -157,18 +157,18 @@ const Dashboard = () => {
       if (response.ok) {
         const data = await response.json();
         if (data === null) {
-          showUpgradedToast("Error in DataBase", "danger");
+          showUpgradedToast("Errore, riprova!", "danger");
         } else {
-          showUpgradedToast("Deleted Successfully", "success");
+          showUpgradedToast("Eliminato con successo!", "success");
           CloseConfirmationPopup();
           fetchProjectsData();
         }
       } else {
-        showUpgradedToast("Error From DataBase!", "danger");
+        showUpgradedToast("Errore, riprova!", "danger");
       }
     } catch (error) {
       console.log(error);
-      showUpgradedToast("Error Please try Again!");
+      showUpgradedToast("Errore, riprova!");
       CloseConfirmationPopup();
     }
   };
@@ -196,18 +196,18 @@ const Dashboard = () => {
   const addProject = async () => {
     const title = titleRef.current.value.trim();
     if (!title) {
-      showUpgradedToast("Title is Required", "warning");
+      showUpgradedToast("Titolo richiesto!", "warning");
       return;
     }
     const type = document.querySelector(
       ".add-popup input[type='radio']:checked"
     );
     if (type === null || type === undefined || !type) {
-      showUpgradedToast("Select Type", "warning");
+      showUpgradedToast("Seleziona Tipo!", "warning");
       return;
     }
     if (ProjectPhotoInput.current.files.length === 0) {
-      showUpgradedToast("Upload Photo Please!", "warning");
+      showUpgradedToast("Carica foto!", "warning");
       return;
     }
 
@@ -215,7 +215,7 @@ const Dashboard = () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    showUpgradedToast("Uploading, Please wait...");
+    showUpgradedToast("Caricamento in corso, attendere...");
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/projects`,
@@ -235,7 +235,7 @@ const Dashboard = () => {
       if (response.ok) {
         const testData = await response.json();
         if (testData === null) {
-          showUpgradedToast("Error in DataBase", "danger");
+          showUpgradedToast("Errore, riprova!", "danger");
         } else {
           const responseV2 = await fetch(
             `${process.env.NEXT_PUBLIC_API_URL}/projects/uploadphoto/${testData.id}`,
@@ -250,9 +250,9 @@ const Dashboard = () => {
           if (responseV2.ok) {
             const testData2 = await responseV2.json();
             if (testData2 === null) {
-              showUpgradedToast("Error in DataBase2", "danger");
+              showUpgradedToast("Errore, riprova!", "danger");
             } else {
-              showUpgradedToast("Done!", "success");
+              showUpgradedToast("Fatto!", "success");
               fetchProjectsData();
               CloseAddPopup();
             }
@@ -262,7 +262,7 @@ const Dashboard = () => {
     } catch (error) {
       console.log(error);
 
-      showUpgradedToast("Error!, please try again", "danger");
+      showUpgradedToast("Errore, riprova!", "danger");
     }
   };
 
@@ -385,7 +385,7 @@ const Dashboard = () => {
                   OpenAddPopup();
                 }}
               >
-                Add Image
+                Addizionare immagine
               </button>
             </div>
             <section
@@ -432,6 +432,7 @@ const Dashboard = () => {
                         >
                           <div className="portfolio-content h-100">
                             <img
+                              style={{objectFit: "cover"}}
                               src={item.image}
                               className="img-fluid lazy-load"
                               alt=""
@@ -466,7 +467,7 @@ const Dashboard = () => {
       </div>
       <div className="confirmation-popup" ref={confirmationPopup}>
         <div className="popContent">
-          <div className="title">Are You Sure?</div>
+          <div className="title">Sei sicuro?</div>
           <div className="buttons">
             <button
               className="cancel"
@@ -474,7 +475,7 @@ const Dashboard = () => {
                 CloseConfirmationPopup();
               }}
             >
-              Cancel
+              Cancellare
             </button>
             <button
               className="order"
@@ -482,7 +483,7 @@ const Dashboard = () => {
                 DeletePhoto();
               }}
             >
-              Delete
+              Eliminare
             </button>
           </div>
         </div>
@@ -493,7 +494,7 @@ const Dashboard = () => {
             <i className="bi bi-x-lg" onClick={() => CloseAddPopup()}></i>
           </div>
           <div className="section-header" style={{ padding: "0" }}>
-            <h2>Add image</h2>
+            <h2>addizionare</h2>
           </div>
           <div className="image-container">
             <img src="" alt="" ref={ProjectPhotoContainer} />
@@ -504,7 +505,7 @@ const Dashboard = () => {
                   ProjectPhotoInput.current.click();
                 }}
               >
-                Upload
+                Caricamento
               </button>
               <input
                 type="file"
@@ -534,7 +535,7 @@ const Dashboard = () => {
                 alignItems: "center",
               }}
             >
-              Title:{" "}
+              Titolo:{" "}
               <input
                 type="text"
                 className="form-control"
@@ -545,7 +546,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="type">
-              Type:
+            Tipo:
               <div className="radio-wrapper-7 d-flex flex-column gap-2">
                 <label className="radio-wrapper-7">
                   <input type="radio" name="type" id="remodeling" />
@@ -568,7 +569,7 @@ const Dashboard = () => {
                   addProject();
                 }}
               >
-                Save
+                Salva
               </button>
             </div>
           </div>

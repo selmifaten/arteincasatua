@@ -25,17 +25,17 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
 
   const saveProfile = async () => {
     if (nameRef.current.value.trim() === "") {
-      showUpgradedToast("Error! Please enter a valid Name.", "danger");
+      showUpgradedToast("Errore! Inserisci un nome valido.", "danger");
       return;
     }
     if (
       emailRef.current.value.trim() === "" ||
       !validateEmail(emailRef.current.value.trim())
     ) {
-      showUpgradedToast("Error! Please enter a valid Email.", "danger");
+      showUpgradedToast("Errore! Inserisci un'e-mail valida.", "danger");
       return;
     }
-    showUpgradedToast("Saving, please wait...");
+    showUpgradedToast("Salvataggio in corso, attendere...");
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/organisateurs/${data.id}`,
@@ -56,10 +56,10 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
         const testdata = await response.json();
         if (testdata == null) {
           if (showUpgradedToast) {
-            showUpgradedToast("Error, Data did not change.", "warning");
+            showUpgradedToast("Errore, riprova!", "warning");
           }
         } else {
-          showUpgradedToast("Done!", "success");
+          showUpgradedToast("Fatto!", "success");
           data.telephone = testdata.telephone;
           data.nom_prenom = testdata.nom_prenom;
           data.email = testdata.email;
@@ -73,7 +73,7 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
         setisEdit(false);
       }
     } catch (error) {
-      showUpgradedToast("Error! Please try again.", "danger");
+      showUpgradedToast("Errore, riprova!", "danger");
 
       console.log(error);
     }
@@ -123,19 +123,19 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
     const checkLength = await fetchAccounts();
     if (checkLength == 1) {
       showUpgradedToast(
-        "Only This account is Available, Can't Delete it!",
+        "Solo questo account è disponibile, non puoi eliminarlo!",
         "warning"
       );
       return;
     }
     if (checkLength === null) {
       showUpgradedToast(
-        "Error, check Console for more details and try again later...",
+        "Errore, riprova!",
         "warning"
       );
       return;
     }
-    showUpgradedToast("Deleting it, Please wait...");
+    showUpgradedToast("Eliminazione in corso, attendere...");
 
     try {
       const response = await fetch(
@@ -152,27 +152,27 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
       if (response.ok) {
         const data = await response.json();
         if (data != null) {
-          showUpgradedToast("Done!", "success");
+          showUpgradedToast("Fatto!", "success");
           localStorage.removeItem("access_token");
           setTimeout(() => {
             window.location.href = "/admin/login";
           }, 1000);
           closePopupHandler();
         } else {
-          showUpgradedToast("Error in the Database, Try again later", "danger");
+          showUpgradedToast("Errore, riprova!", "danger");
         }
       } else {
-        showUpgradedToast("Error! Please try again.", "danger");
+        showUpgradedToast("Errore, riprova!", "danger");
       }
     } catch (error) {
-      showUpgradedToast("Error! Please try again.", "danger");
+      showUpgradedToast("Errore, riprova!", "danger");
 
       console.log(error);
     }
   };
 
   const sendRecover = async () => {
-      showUpgradedToast("Sending Request To Email, Please wait...");
+      showUpgradedToast("Invio richiesta all'e-mail, attendere prego...");
       try {
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/organisateurs/recoverpassviaemail/${data.email}`,
@@ -186,15 +186,15 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
         if (response.ok) {
           const verify = await response.text();
           if (verify == "true") {
-            showUpgradedToast("Done, Check your Email", "success");
+            showUpgradedToast("Fatto, controlla la tua email.", "success");
           } else {
-            showUpgradedToast("Error", "danger");
+            showUpgradedToast("Errore!", "danger");
           }
         }
       } catch (error) {
         console.log(error);
 
-        showUpgradedToast("Error, please try again", "danger");
+        showUpgradedToast("Errore, riprova!", "danger");
       }
   };
 
@@ -208,13 +208,13 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
           <table>
             <tbody>
               <tr>
-                <td className="bolder">Profile ID</td>
+                <td className="bolder">Profilo ID</td>
                 <td>{data.id || ""}</td>
               </tr>
             </tbody>
             <tbody>
               <tr>
-                <td className="bolder">Name</td>
+                <td className="bolder">Nome</td>
                 <td>
                   {isEdit ? (
                     <>
@@ -270,7 +270,7 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
             </tbody>
             <tbody>
               <tr>
-                <td className="bolder">Role</td>
+                <td className="bolder">Ruolo</td>
                 <td>{data.role || ""}</td>
               </tr>
             </tbody>
@@ -287,7 +287,7 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
                     }}
                     onClick={() => {sendRecover()}}
                   >
-                    Change{" "}
+                    Modifica{" "}
                   </div>
                 </td>
               </tr>
@@ -300,14 +300,14 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
                   saveProfile();
                 }}
               >
-                Save
+                Salva
               </button>
               <button
                 onClick={() => {
                   setisEdit(false);
                 }}
               >
-                Cancel
+                Cancellare
               </button>
             </div>
           ) : (

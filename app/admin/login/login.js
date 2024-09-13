@@ -102,7 +102,7 @@ const Login = () => {
       setErrors(newErrors);
       return;
     }
-    showUpgradedToast("Checking, please Wait...");
+    showUpgradedToast("Controllo in corso, attendere...");
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/organisateurs/signin`,
@@ -123,7 +123,7 @@ const Login = () => {
           if (data != null) {
             localStorage.setItem("access_token", data.access_token);
             setTimeout(() => {
-              showUpgradedToast("Done, Redirecting...", "success");
+              showUpgradedToast("Fatto, reindirizzamento...", "success");
             }, 2000);
             setTimeout(() => {
               window.location.href = "./";
@@ -136,7 +136,7 @@ const Login = () => {
     } catch (error) {
       console.log(error);
       setErrors({ signin: true });
-      showUpgradedToast("Error, Please Try again", "danger");
+      showUpgradedToast("Errore, riprova!", "danger");
     }
   };
 
@@ -167,7 +167,7 @@ const Login = () => {
       setErrors(newErrors);
       return;
     }
-    showUpgradedToast("Checking, Please wait...");
+    showUpgradedToast("Controllo in corso, attendere prego...");
     try {
       const response = await fetch(
         `${
@@ -184,25 +184,25 @@ const Login = () => {
         const data = await response.text();
         if (data == "false") {
           setTimeout(() => {
-            showUpgradedToast("Email not Valid", "warning");
+            showUpgradedToast("E-mail non valida", "warning");
             setErrors({ emailForget: true });
           }, 3000);
         } else {
           setTimeout(() => {
-            showUpgradedToast("Done", "success");
+            showUpgradedToast("Fatto!", "success");
             changeDisplay(3);
           }, 2000);
         }
       }
     } catch (error) {
       console.log(error);
-      showUpgradedToast("Error", "danger");
+      showUpgradedToast("Errore!", "danger");
     }
   };
 
   const sendRecover = async (type) => {
     if (type === "email") {
-      showUpgradedToast("Sending Via Email, Please wait...");
+      showUpgradedToast("Invio tramite e-mail, attendere prego...");
       try {
         const response = await fetch(
           `${
@@ -218,15 +218,15 @@ const Login = () => {
         if (response.ok) {
           const verify = await response.text();
           if (verify == "true") {
-            showUpgradedToast("Done, Check your Email", "success");
+            showUpgradedToast("Fatto, controlla la tua email.", "success");
           } else {
-            showUpgradedToast("Error", "danger");
+            showUpgradedToast("Errore!", "danger");
           }
         }
       } catch (error) {
         console.log(error);
 
-        showUpgradedToast("Error, please try again", "danger");
+        showUpgradedToast("Errore, riprova!", "danger");
       }
     }
   };
@@ -254,7 +254,7 @@ const Login = () => {
                   ref={email}
                 />
               </div>
-              {errors.email ? <div className="error">Invalid Email</div> : ""}
+              {errors.email ? <div className="error">E-mail non valida</div> : ""}
             </div>
             <div className="input password">
               <div
@@ -270,7 +270,7 @@ const Login = () => {
                 />
               </div>
               {errors.password ? (
-                <div className="error">Invalid Password</div>
+                <div className="error">Password non valida</div>
               ) : (
                 ""
               )}
@@ -283,19 +283,19 @@ const Login = () => {
                   }}
                 />
                 <div className="checkmark"></div>
-                Show Password
+                Mostra password
               </label>
             </div>
           </div>
           <div className="login">
-            <button onClick={() => signin()}>Sign in</button>
+            <button onClick={() => signin()}>Registrazione</button>
             {errors.signin ? (
-              <div className="error">Error, Please Try again.</div>
+              <div className="error">Errore, riprova!</div>
             ) : (
               ""
             )}
             <div className="forget-password" onClick={() => changeDisplay(2)}>
-              Forget Password?
+            Dimentica la password?
             </div>
           </div>
         </div>
@@ -303,9 +303,9 @@ const Login = () => {
           className="forget-password-content disappear"
           ref={forgetContainer}
         >
-          <div className="title">Forget Password</div>
+          <div className="title">Dimentica la password</div>
           <div className="inputs">
-            <div className="text">Enter Your Email:</div>
+            <div className="text">Inserisci la tua email:</div>
             <div className="input" ref={emailForgetContainer}>
               <input
                 type="text"
@@ -314,21 +314,21 @@ const Login = () => {
                 ref={emailForget}
               />
               {errors.emailForget ? (
-                <div className="error">Invalid Email</div>
+                <div className="error">E-mail non valida</div>
               ) : (
                 ""
               )}
             </div>
           </div>
           <div className="login">
-            <button onClick={() => nextForget()}>Next</button>
+            <button onClick={() => nextForget()}>Prossimo</button>
             {errors.signin ? (
-              <div className="error">Error, Please Try again.</div>
+              <div className="error">Errore, riprova!</div>
             ) : (
               ""
             )}
             <div className="forget-password" onClick={() => changeDisplay(1)}>
-              Go Back
+            Tornare
             </div>
           </div>
         </div>
@@ -336,7 +336,7 @@ const Login = () => {
           className="send-recover-content disappear"
           ref={sendRecoverContainer}
         >
-          <div className="title">Send Recovery</div>
+          <div className="title">Invia recupero</div>
           <div className="cards">
             <div
               className="card"
@@ -344,13 +344,13 @@ const Login = () => {
                 sendRecover("email");
               }}
             >
-              <div className="text">Via Email</div>
+              <div className="text">Tramite e-mail</div>
               <i className="bi bi-arrow-right"></i>
             </div>
           </div>
           <div className="login">
             <div className="forget-password" onClick={() => changeDisplay(2)}>
-              Go Back
+            Tornare
             </div>
           </div>
         </div>
