@@ -3,7 +3,6 @@ import "./popups.css";
 
 const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
   const nameRef = useRef(null);
-  const phoneRef = useRef(null);
   const emailRef = useRef(null);
   const popupcontent = useRef(null);
   const [isEdit, setisEdit] = useState(false);
@@ -29,10 +28,6 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
       showUpgradedToast("Error! Please enter a valid Name.", "danger");
       return;
     }
-    if (phoneRef.current.value.trim() === "") {
-      showUpgradedToast("Error! Please enter a valid Phone.", "danger");
-      return;
-    }
     if (
       emailRef.current.value.trim() === "" ||
       !validateEmail(emailRef.current.value.trim())
@@ -52,7 +47,6 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
           },
           body: JSON.stringify({
             nom_prenom: nameRef.current.value.trim(),
-            telephone: phoneRef.current.value.trim(),
             email: emailRef.current.value.trim(),
           }),
         }
@@ -232,37 +226,6 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
                     </>
                   ) : (
                     data.nom_prenom || ""
-                  )}
-                  {isEdit ? (
-                    ""
-                  ) : (
-                    <i
-                      className="bi bi-pencil"
-                      onClick={() => {
-                        editState();
-                      }}
-                    ></i>
-                  )}
-                </td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td className="bolder">Phone</td>
-                <td>
-                  {isEdit ? (
-                    <>
-                      <input
-                        type="text"
-                        defaultValue={data.telephone || ""}
-                        ref={phoneRef}
-                        onInput={() => {
-                          validateNumberInput(phoneRef);
-                        }}
-                      />
-                    </>
-                  ) : (
-                    data.telephone || ""
                   )}
                   {isEdit ? (
                     ""
