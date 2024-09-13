@@ -350,7 +350,7 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
           ) : (
             ""
           )}
-          <div className="delete">
+          {/* <div className="delete">
             <div className="text">
               Do you want to delete it? After you press the button there's no
               going Back!
@@ -364,7 +364,7 @@ const ProfilePopup = ({ data, showUpgradedToast, fetchProfiles }) => {
                 Delete
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
