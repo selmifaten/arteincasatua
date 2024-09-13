@@ -1,0 +1,387 @@
+.content-container {
+  position: relative;
+  width: min(90vw, 600px);
+  height: min(90vh, 600px);
+}
+
+#login-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    to bottom,
+    var(---background-linear-1),
+    var(---background-linear-2),
+    var(---background-linear-3),
+    var(---background-linear-4),
+    var(---background-linear-5),
+    var(---background-linear-6),
+    var(---background-linear-7),
+    var(---background-linear-8),
+    var(---background-linear-9),
+    var(---background-linear-10),
+    var(---background-linear-11),
+    var(---background-linear-12)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  width: min(90vw, 600px);
+  height: min(90vh, 600px);
+  background-color: var(---background-color-primary);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.6s;
+  scale: 1;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.forget-password-content {
+  display: flex;
+  width: min(90vw, 600px);
+  height: min(90vh, 600px);
+  background-color: var(---background-color-primary);
+  border-radius: 50px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.6s;
+  scale: 1;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+  left: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.send-recover-content {
+  display: flex;
+  width: min(90vw, 600px);
+  height: min(90vh, 600px);
+  background-color: var(---background-color-primary);
+  border-radius: 50px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.6s;
+  scale: 1;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.disappear {
+  scale: 0;
+  opacity: 0;
+}
+
+#login-container .title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: var(---third-family);
+  letter-spacing: 2px;
+  color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    var(---background-linear-1),
+    var(---background-linear-2),
+    var(---background-linear-3),
+    var(---background-linear-4),
+    var(---background-linear-5),
+    var(---background-linear-6),
+    var(---background-linear-7),
+    var(---background-linear-8),
+    var(---background-linear-9),
+    var(---background-linear-10),
+    var(---background-linear-11),
+    var(---background-linear-12)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+#login-container .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#login-container .inputs .input {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#login-container .inputs .input input {
+  /* width: 100%; */
+  border: 2px solid var(---second-color);
+  border-radius: 14px;
+  font-size: 1.3rem;
+  font-family: var(---third-family);
+  color: rgb(79, 78, 78);
+  padding: 2px 15px;
+  height: 45px !important;
+  transition: all 0.4s;
+  margin-bottom: 4px;
+  width: 100%;
+  background-color: transparent;
+}
+
+#login-container .inputs .input input:focus {
+  outline: none;
+}
+
+#login-container .inputs .input::after {
+  content: "︎ Email︎︎︎ ︎︎︎";
+  position: absolute;
+  top: 8px;
+  left: 11.5px;
+  color: grey;
+  font-size: 1.2rem;
+  font-family: var(---third-family);
+  /* z-index: -1; */
+  cursor: text;
+  z-index: -1;
+}
+
+#login-container .inputs .input.password::after {
+  content: " ︎Password ︎";
+}
+
+#login-container .inputs .input.password .checkbox-container {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#login-container .login {
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  align-items: center;
+}
+
+#login-container .login button {
+  width: 200px;
+  height: 50px;
+  border: 0;
+  transition: all 0.4s;
+  font-size: 1.4rem;
+  font-family: var(---third-family);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#login-container .login button {
+  /* scale: 1.05; */
+  background-color: var(---second-color);
+  color: var(---font-color-primary);
+  border: 1px solid white;
+}
+
+#login-container .login button:hover {
+  background-color: var(---third-color);
+  border: 1px solid var(---third-color);
+  scale: 1.06;
+  letter-spacing: 1px;
+}
+
+#login-container .login button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#login-container .login .forget-password {
+  font-size: 1.1rem;
+  font-family: var(---second-family);
+  color: grey;
+  margin-top: 5px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#login-container .login .error {
+  padding: 0;
+}
+
+.Afteranimation::after {
+  animation: AfterGoesTop 500ms ease 1 forwards;
+}
+
+.removeAfteranimation::after {
+  animation: AfterGoesDown 500ms ease 1 forwards;
+}
+
+@keyframes AfterGoesTop {
+  0% {
+    top: 8px;
+    scale: 1;
+    z-index: -1;
+  }
+  100% {
+    top: -15px;
+    background-color: var(---background-color-primary);
+    scale: 0.9;
+    z-index: 0;
+  }
+}
+
+@keyframes AfterGoesDown {
+  0% {
+    background-color: var(---background-color-primary);
+    top: -15px;
+    scale: 0.9;
+    z-index: 0;
+  }
+  100% {
+    background-color: transparent;
+    top: 8px;
+    scale: 1;
+    z-index: -1;
+  }
+}
+
+.checkbox-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  font-family: var(---third-family);
+  font-size: 1.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: grey;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-container .checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(---second-color);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+#login-container .forget-password-content .inputs {
+  gap: 10px;
+}
+
+#login-container .inputs .text {
+  font-size: 1.6rem;
+  font-family: var(---third-family);
+  width: 100%;
+  color: var(---fourth-color);
+  margin-bottom: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+
+.cards .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  border: 1px solid var(---third-color);
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.4s;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.cards .card:hover {
+  scale: 1.05;
+}
+
+.cards .card:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.cards .card .text {
+  font-size: 1.5rem;
+  font-family: var(---third-family);
+  /* color: var(---second-color); */
+  color: rgb(69, 68, 68);
+}
+
+.cards .card i {
+  font-size: 2rem;
+  /* color: var(---second-color); */
+  color: rgb(69, 68, 68);
+  /* color: grey; */
+}

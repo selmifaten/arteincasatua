@@ -1,0 +1,351 @@
+body {
+  overflow: hidden;
+}
+
+#show-toast-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  font-family: var(--font-primary);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  font-family: var(--font-secondary);
+  padding-left: 20px;
+}
+
+.gotop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: var(---second-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  color: var(---font-color-primary);
+  scale: 0;
+  transition: all 0.4s;
+  opacity: 0;
+  transform: translateY(200px);
+  cursor: pointer;
+}
+
+.gotop.showGoTop:hover {
+  scale: 1.1 !important;
+  background-color: var(---fourth-color);
+}
+
+.gotop span {
+  font-size: 2.6rem;
+}
+
+.gotop.showGoTop {
+  transform: translateY(0);
+  scale: 1;
+  opacity: 1;
+}
+
+label.radio-wrapper-7 {
+  padding: 6px;
+  border-radius: 50px;
+  display: inline-flex;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+label.radio-wrapper-7:hover,
+label.radio-wrapper-7:focus-within {
+  background: rgba(159, 159, 159, 0.1);
+}
+label.radio-wrapper-7 input {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: none;
+  border: 0;
+  box-shadow: inset 0 0 0 1px #9f9f9f;
+  box-shadow: inset 0 0 0 1.5px #9f9f9f;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+  pointer-events: none;
+}
+label.radio-wrapper-7 input:focus {
+  outline: none;
+}
+label.radio-wrapper-7 input:checked {
+  box-shadow: inset 0 0 0 6px var(---second-color);
+}
+label.radio-wrapper-7 span {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 8px;
+}
+
+/* Spinning Gear Loading Animation */
+/* <div className="gear">
+  <img src="https://assets.codepen.io/6093409/gear.svg.png" alt="an illustration of a gear" />
+</div> */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-image: linear-gradient(
+    to bottom,
+    var(---background-linear-1),
+    var(---background-linear-2),
+    var(---background-linear-3),
+    var(---background-linear-4),
+    var(---background-linear-5),
+    var(---background-linear-6),
+    var(---background-linear-7),
+    var(---background-linear-8),
+    var(---background-linear-9),
+    var(---background-linear-10),
+    var(---background-linear-11),
+    var(---background-linear-12)
+  );
+}
+
+.gear {
+  width: 140px;
+  height: 140px;
+  animation: rotate 4s linear infinite;
+}
+
+.gear img {
+  width: 100%;
+  height: 100%;
+  filter: invert(100%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.confirmation-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+  z-index: 3;
+  background-color: rgba(80, 80, 80, 0.629);
+  scale: 0;
+  opacity: 0;
+}
+
+.confirmation-popup.showConfirmationPopup {
+  scale: 1;
+  opacity: 1;
+}
+
+.confirmation-popup .popContent {
+  width: 500px;
+  height: 200px;
+  max-width: 90vw;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.confirmation-popup .popContent .title {
+  font-size: 2rem;
+  font-family: var(---third-family);
+}
+
+.confirmation-popup .popContent .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.confirmation-popup .popContent .buttons button {
+  width: 200px;
+  height: 44px;
+  font-size: 1.3rem;
+  font-family: var(--family-primary);
+  border: 0;
+  border-radius: 12px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.confirmation-popup .popContent .buttons button:hover {
+  scale: 1.1;
+}
+
+.confirmation-popup .popContent .buttons button:active {
+  letter-spacing: 1px;
+  scale: 1.15;
+}
+
+.confirmation-popup .popContent .buttons .cancel {
+  border: 1px solid black;
+  background-color: white;
+  /* color: var(---font-color-secondary); */
+}
+
+.confirmation-popup .popContent .buttons .order {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
+
+.confirmation-popup .popContent .buttons .cancel:hover {
+  background-color: rgba(203, 203, 203, 0.61);
+}
+
+.confirmation-popup .popContent .buttons .order:hover {
+  background-color: rgba(83, 83, 83, 0.889);
+}
+
+.add-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+  z-index: 3;
+  background-color: rgba(80, 80, 80, 0.629);
+  scale: 0;
+  opacity: 0;
+}
+
+.add-popup.showConfirmationPopup {
+  scale: 1;
+  opacity: 1;
+}
+
+.add-popup .popContent {
+  max-width: 90vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* border-radius: 20px; */
+  padding: 10px;
+  max-height: 95%;
+  overflow: auto;
+  width: 500px;
+}
+
+.add-popup .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+.add-popup .image-container img {
+  height: 356px;
+  width: min(356px, 100%);
+}
+
+.add-popup .popContent .title {
+  font-size: 1.3rem;
+  font-family: var(--font-secondary);
+}
+
+.add-popup .popContent .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.add-popup .popContent .buttons button {
+  width: 200px;
+  height: 44px;
+  font-size: 1.3rem;
+  font-family: var(--family-primary);
+  border: 0;
+  border-radius: 12px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.add-popup .popContent .buttons button:hover {
+  scale: 1.1;
+}
+
+.add-popup .popContent .buttons button:active {
+  letter-spacing: 1px;
+  scale: 1.15;
+}
+
+.add-popup .popContent .buttons .cancel {
+  border: 1px solid black;
+  background-color: white;
+  /* color: var(---font-color-secondary); */
+}
+
+.add-popup .popContent .buttons .order {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
+
+.add-popup .popContent .buttons .cancel:hover {
+  background-color: rgba(203, 203, 203, 0.61);
+}
+
+.add-popup .popContent .buttons .order:hover {
+  background-color: rgba(83, 83, 83, 0.889);
+}

@@ -1,0 +1,94 @@
+.orders-chart .total-profit {
+  flex: 1;
+  justify-content: space-between !important;
+  padding: 20px;
+}
+
+.orders-chart .transactions .text-transactions {
+  margin: 10px 0;
+}
+
+.orders-chart .transactions .text {
+  margin-top: 20px;
+}
+
+.orders-details .accounts-card {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* gap: 20px; */
+}
+
+.orders-details .accounts-card .totalOrders{
+    font-family: var(---third-family);
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 8px;
+    font-weight: 300;
+
+}
+.orders-details .accounts-card .totalOrders .number{
+    color: var(---second-color);
+    font-weight: 400;
+}
+
+.orders-details .accounts-card .search-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(---third-family);
+    margin-left: 8px;
+}
+
+.orders-details .accounts-card .search-container.create-container{
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.orders-details .accounts-card .search-container .search-title{
+    font-size: 1.6rem;
+    color: var(---third-color);
+}
+
+.orders-details .accounts-card .search-container .search-type{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+.orders-details .accounts-card .search-container .search-type input:not(input[type="radio"]){
+    width: 240px;
+    /* height: 40px; */
+    padding: 3px;
+    font-size: 1.1rem;
+    border: 1px solid var(---third-color);
+    border-radius: 5px;
+    transition: all 0.4s;
+}
+
+.orders-details .accounts-card .search-container .search-type input:not(input[type="radio"]):focus{
+    outline: none;
+    scale: 1.05;
+    /* border-width: 2px; */
+}
+
+.orders-details .accounts-card .search-container .search button{
+    width: 170px;
+    height: 35px;
+    border: 0;
+    background-color: var(---first-color);
+    transition: all 0.5s;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.orders-details .accounts-card .search-container .search button:hover{
+    scale: 1.05;
+}
+

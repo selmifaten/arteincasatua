@@ -1,0 +1,527 @@
+#dashboard-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    to bottom,
+    var(---background-linear-1),
+    var(---background-linear-2),
+    var(---background-linear-3),
+    var(---background-linear-4),
+    var(---background-linear-5),
+    var(---background-linear-6),
+    var(---background-linear-7),
+    var(---background-linear-8),
+    var(---background-linear-9),
+    var(---background-linear-10),
+    var(---background-linear-11),
+    var(---background-linear-12)
+  );
+  display: flex;
+}
+
+@keyframes openContent {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  animation: openContent 0.5s forwards;
+}
+
+.navbar {
+  width: 400px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  flex-shrink: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 10px;
+  gap: 20px;
+  overflow: auto;
+}
+
+.content .top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content .top .profile {
+  width: 60px;
+  height: 60px;
+  background-color: var(---background-color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.content .top .profile:hover {
+  scale: 1.1;
+}
+
+.content .top .profile:active {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+    rgba(0, 0, 0, 0.35) 0px 5px 15px inset;
+}
+
+.content .top .profile span {
+  font-size: 2.6rem;
+  color: rgb(200, 200, 200);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.second {
+  display: flex;
+  gap: 20px;
+}
+
+.third {
+  display: flex;
+}
+.card {
+  display: flex;
+  background-color: var(---background-color-primary);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: var(---third-family);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.second .total-profit {
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.second .card .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.second .card .title {
+  font-size: 2rem;
+  /* font-weight: 500; */
+  letter-spacing: 1px;
+}
+
+.second .total-profit .number {
+  font-size: 2rem;
+  color: var(---first-color);
+  font-weight: 500;
+}
+
+.timeline {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  transition: all 0.4s;
+}
+
+.timeline .text {
+  font-size: 1.1rem;
+  color: rgb(93, 92, 92);
+  transition: all 0.4s;
+}
+
+.timeline .time-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: grey;
+  transition: all 0.4s;
+}
+
+.timeline .time-card {
+  border-radius: 6px;
+  padding: 5px;
+  border: 1px solid grey;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.timeline .time-card.selected {
+  color: white;
+  background-color: grey;
+  transition: all 0.4s;
+}
+
+.second .card .explore button {
+  border: 0;
+  background-color: var(---second-color);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: var(---second-family);
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.4s;
+}
+
+.second .card .explore button:hover {
+  scale: 1.1;
+}
+
+.second .card .explore button:active {
+  background-color: var(---third-color);
+}
+
+.second .card .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second .card .right .icon {
+  display: flex;
+  background-color: rgb(138, 141, 147);
+  margin: 0 20px;
+  border-radius: 50%;
+  padding: 20px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  align-items: center;
+}
+
+.second .card .right i {
+  font-size: 60px;
+  color: white;
+}
+
+.transactions {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.transactions.home {
+  gap: 20px;
+}
+
+.transactions .text {
+  font-size: 1.3rem;
+  color: grey;
+}
+
+.transactions .transaction-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.transactions .transaction-cards .transaction-card {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.transactions .transaction-cards .transaction-card .icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.transactions .transaction-cards .transaction-card .icon i {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.transactions .transaction-cards .transaction-card .orders {
+  background-color: rgb(140, 87, 255);
+}
+
+.transactions .transaction-cards .transaction-card .costumers {
+  background-color: rgb(86, 202, 0);
+}
+
+.transactions .transaction-cards .transaction-card .revenue {
+  background-color: rgb(22, 177, 255);
+}
+
+.transactions .transaction-cards .transaction-card .food {
+  background-color: rgb(255, 180, 0);
+}
+
+.transactions .transaction-cards .transaction-card .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 3px;
+}
+
+.transactions .transaction-cards .transaction-card .details .text {
+  font-family: var(---second-family);
+  font-size: 1rem;
+  color: rgb(155, 152, 152);
+}
+
+.transactions .transaction-cards .transaction-card .details .number {
+  font-size: 1.3rem;
+  font-family: var(---third-family);
+}
+
+.accounts-card {
+  background-color: var(---background-color-primary);
+  width: 100%;
+  min-height: 200px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #f6f7fb;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.accounts-card .title {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 30px;
+}
+
+.accounts-card .title .name {
+  flex: 1;
+  font-size: 1.3rem;
+  font-family: var(---second-family);
+  font-weight: 300;
+  /* text-align: center; */
+}
+.ingredients-content .accounts,
+.accounts-card .accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.ingredients-content .accounts .account,
+.accounts-card .accounts .account {
+  display: flex;
+  flex-direction: row;
+  background-color: var(---background-color-primary);
+  padding: 20px 30px;
+}
+
+.ingredients-content .accounts .account .name,
+.accounts-card .accounts .account .name {
+  flex: 1;
+  font-family: var(---third-family);
+  /* text-align: center; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.ingredients-content .accounts .account .nom_prenom .profile,
+.accounts-card .accounts .account .nom_prenom .profile {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(178, 177, 177);
+}
+
+.ingredients-content .accounts .account .nom_prenom .profile span,
+.accounts-card .accounts .account .nom_prenom .profile span {
+  font-size: 2rem;
+  color: rgb(240, 240, 240);
+}
+
+.ingredients-content .accounts .account .email,
+.accounts-card .accounts .account .email {
+  font-size: 1.1rem;
+  color: grey;
+}
+
+.ingredients-content .accounts .account .role i,
+.accounts-card .accounts .account .role i {
+  color: rgb(255, 162, 0);
+  font-size: 1.3rem;
+}
+
+.ingredients-content .accounts .account .worker i,
+.accounts-card .accounts .account .worker i {
+  /* color: rgb(2, 179, 2); */
+  color: rgb(84, 200, 238);
+}
+
+.ingredients-content .accounts .account .dialogues button,
+.accounts-card .accounts .account .dialogues button {
+  border: 0;
+  background-color: transparent;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: rgb(116, 116, 116);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.ingredients-content .accounts .account .dialogues button:hover,
+.accounts-card .accounts .account .dialogues button:hover {
+  scale: 1.1;
+}
+
+.next-prev {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.next-prev div {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: var(---second-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all 0.4s;
+}
+
+.next-prev div:not(.number) {
+  cursor: pointer;
+}
+
+.next-prev div:not(.number):hover {
+  scale: 1.1;
+}
+
+.next-prev .number {
+  font-size: 1.4rem;
+  font-family: var(---third-family);
+  font-weight: 500;
+  background-color: var(---second-color);
+}
+
+.orders_id {
+  word-break: break-all;
+  text-align: center;
+  justify-content: center;
+}
+
+.third {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.third .card {
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  font-family: var(---third-family);
+}
+
+.third .card .title {
+  font-size: 2rem;
+  /* font-weight: 300; */
+  /* letter-spacing: 2px; */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.third .card .title span {
+  font-size: 2.5rem;
+  /* color: rgb(58, 225, 251); */
+  border-radius: 50%;
+  color: rgb(238, 120, 84);
+}
+
+.third .card.item-management .title span {
+  color: rgb(58, 225, 251);
+}
+
+.third .card .description {
+  color: grey;
+}
+
+.third .card .button button {
+  min-width: 200px;
+  min-height: 50px;
+  font-size: 1.2rem;
+  padding: 10px;
+  transition: all 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  border: 0;
+  font-weight: 500;
+  background-color: var(---second-color);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.third .card .button button:hover {
+  scale: 1.1;
+}
+
+.third .card .button button:active {
+  background-color: var(---third-color);
+}
+
+.third {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+button.add-button {
+  width: 240px;
+  height: 40px;
+  border: 0;
+  color: white;
+  font-family: var(--family-primary);
+  font-size: 1.2rem;
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 0.4s;
+}
+
+button.add-button:active {
+  background-color: var(---background-linear-1);
+}
+button.add-button:hover {
+  scale: 1.05;
+}

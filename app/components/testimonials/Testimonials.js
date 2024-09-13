@@ -13,8 +13,8 @@ const Testimonials = () => {
   const icon = {
     success: '<i class="bi bi-check-circle"></i>',
     danger: '<i class="bi bi-bug"></i>',
-    warning: '<i class="bi bi-exclamation-circle">warning</i>',
-    info: '<i class="bi bi-info-circle">info</i>',
+    warning: '<i class="bi bi-exclamation-circle"></i>',
+    info: '<i class="bi bi-info-circle"></i>',
   };
 
   const showUpgradedToast = (

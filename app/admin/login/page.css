@@ -1,0 +1,72 @@
+#show-toast-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  font-family: var(---first-family);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  font-family: var(---fourth-family);
+  padding-left: 20px;
+}
+
+.gotop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: var(---second-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  color: var(---font-color-primary);
+  scale: 0;
+  transition: all 0.4s;
+  opacity: 0;
+  transform: translateY(200px);
+  cursor: pointer;
+}
+
+.gotop.showGoTop:hover {
+  scale: 1.1 !important;
+  background-color: var(---fourth-color);
+}
+
+.gotop span {
+  font-size: 2.6rem;
+}
+
+.gotop.showGoTop {
+  transform: translateY(0);
+  scale: 1;
+  opacity: 1;
+}
