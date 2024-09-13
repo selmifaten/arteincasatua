@@ -16,8 +16,11 @@
 
 :root {
   ---first-color: #f6aa1c;
-  ---second-color: #bc3908;
-  ---third-color: #941b0c;
+  /* ---second-color: #bc3908; */
+  ---second-color: #1c1c84;
+  /* ---third-color: #941b0c; */
+  ---third-color: #000042;
+
   ---fourth-color: #621708;
   ---fifth-color: #601a03;
   ---background-color-primary: #ffffff;

@@ -131,21 +131,9 @@ label.radio-wrapper-7 span {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-image: linear-gradient(
-    to bottom,
-    var(---background-linear-1),
-    var(---background-linear-2),
-    var(---background-linear-3),
-    var(---background-linear-4),
-    var(---background-linear-5),
-    var(---background-linear-6),
-    var(---background-linear-7),
-    var(---background-linear-8),
-    var(---background-linear-9),
-    var(---background-linear-10),
-    var(---background-linear-11),
-    var(---background-linear-12)
-  );
+  background-color: #1c1c84;
+/*background-image: #1c1c84;*/
+
 }
 
 .gear {
