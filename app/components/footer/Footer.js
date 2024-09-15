@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-content position-relative">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-3 col-md-6">
               <div className="footer-info">
                 <h3>Arte in Casa Tua</h3>
                 <p>
@@ -37,7 +37,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-3 footer-links">
+            <div className="col-lg-3 col-md-3 footer-links">
               <h4>Link utili</h4>
               <ul>
                 <li>
@@ -55,7 +55,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-lg-4 col-md-3 footer-links">
+            <div className="col-lg-3 col-md-3 footer-links">
               <h4>Our Services</h4>
               <ul>
                 <li>
@@ -72,47 +72,72 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            {/* <div className="col-lg-2 col-md-3 footer-links">
-              <h4>Hic solutasetp</h4>
-              <ul>
-                <li>
-                  <a href="#">Molestiae accusamus iure</a>
-                </li>
-                <li>
-                  <a href="#">Excepturi dignissimos</a>
-                </li>
-                <li>
-                  <a href="#">Suscipit distinctio</a>
-                </li>
-                <li>
-                  <a href="#">Dilecta</a>
-                </li>
-                <li>
-                  <a href="#">Sit quas consectetur</a>
-                </li>
-              </ul>
-            </div> */}
 
-            {/* <div className="col-lg-2 col-md-3 footer-links">
-              <h4>Nobis illum</h4>
-              <ul>
-                <li>
-                  <a href="#">Ipsam</a>
+            <div className="col-lg-3 col-md-6 footer-info">
+              <h4>Informazioni sugli Sviluppatori</h4>
+              <p>Sito web creato e progettato da:</p>
+              <ul style={{ padding: "0" }}>
+                <li className="mt-2">
+                  Faten Selmi -{" "}
+                  <a href="mailto:selmii.faten@gmail.com">
+                    selmii.faten@gmail.com
+                  </a>
+                  <div className="social-links d-flex ">
+                    <a
+                      href="https://www.linkedin.com/in/fatenselmi/"
+                      className="d-flex align-items-center justify-content-center"
+                    >
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                    <a
+                      href="https://github.com/selmifaten"
+                      className="d-flex align-items-center justify-content-center"
+                    >
+                      <i className="bi bi-github"></i>
+                    </a>
+
+                    <a
+                      href="https://www.facebook.com/faten.selmi.9279/"
+                      className="d-flex align-items-center justify-content-center"
+                    >
+                      <i className="bi bi-facebook"></i>
+                    </a>
+                  </div>
                 </li>
-                <li>
-                  <a href="#">Laudantium dolorum</a>
-                </li>
-                <li>
-                  <a href="#">Dinera</a>
-                </li>
-                <li>
-                  <a href="#">Trodelas</a>
-                </li>
-                <li>
-                  <a href="#">Flexo</a>
+                <li className="mt-2">
+                  Jawhar Hmidi -{" "}
+                  <a href="mailto:jawharhmidi01@gmail.com">
+                    jawharhmidi01@gmail.com
+                  </a>
+                  <div className="social-links d-flex ">
+                    <a
+                      href="https://www.linkedin.com/in/jawharhmidi/"
+                      className="d-flex align-items-center justify-content-center"
+                    >
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                    <a
+                      href="https://github.com/jawharhmidi02"
+                      className="d-flex align-items-center justify-content-center"
+                    >
+                      <i className="bi bi-github"></i>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/jawhar.hmidi.5/"
+                      className="d-flex align-items-center justify-content-center"
+                    >
+                      <i className="bi bi-facebook"></i>
+                    </a>
+                    <a
+                      href="https://jawharhmidi.netlify.app/"
+                      className="d-flex align-items-center justify-content-center"
+                    >
+                      <i className="bi bi-browser-chrome"></i>
+                    </a>
+                  </div>
                 </li>
               </ul>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
@@ -124,12 +149,13 @@ const Footer = () => {
             <strong>
               <span>L'Arte in Casa Tua</span>
             </strong>
-            . All Rights Reserved
+            . Tutti i diritti riservati
           </div>
-          {/* <div className="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>{" "}
-            Distributed by <a href="https://themewagon.com">ThemeWagon</a>
-          </div> */}
+          <div className="credits" style={{ marginTop: "10px" }}>
+            Progettato da Sviluppatori: <br />
+            <a href="https://jawharhmidi.netlify.app/">Jawhar Hmidi</a> e{" "}
+            <a href="https://www.linkedin.com/in/fatenselmi/">Faten Selmi</a>
+          </div>
         </div>
       </div>
     </footer>
