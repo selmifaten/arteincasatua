@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 const nodemailer = require("nodemailer");
 
 export async function POST(request) {
+  const receiver = process.env.NEXT_PUBLIC_EMAIL_RECEIVER;
   const username = process.env.NEXT_PUBLIC_EMAIL_USERNAME;
   const password = process.env.NEXT_PUBLIC_EMAIL_PASSWORD;
 
@@ -27,8 +28,7 @@ export async function POST(request) {
   try {
     const mail = await transporter.sendMail({
       from: username,
-      to: username,
-      replyTo: email,
+      to: receiver,
       subject: `Nuova richiesta di contatto: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #52565e; padding: 20px; background-color: #f9f9f9;">
