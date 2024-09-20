@@ -385,7 +385,7 @@ const Dashboard = () => {
                   OpenAddPopup();
                 }}
               >
-                Addizionare immagine
+                Aggiungi immagine
               </button>
             </div>
             <section
@@ -505,7 +505,7 @@ const Dashboard = () => {
                   ProjectPhotoInput.current.click();
                 }}
               >
-                Caricamento
+                Scegli
               </button>
               <input
                 type="file"
